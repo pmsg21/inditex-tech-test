@@ -4,7 +4,7 @@ import { Link, Outlet } from "react-router-dom";
 export function Root(): ReactElement {
   return (
     <>
-      <nav className="flex border-b-2 border-b-gray-100 p-3">
+      <nav className="mb-6 flex border-b-2 border-b-gray-100 p-3">
         <h1 className="text-3xl text-blue-500 transition-all hover:text-blue-700">
           <Link to="/">Podcaster</Link>
         </h1>

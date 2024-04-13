@@ -1,6 +1,9 @@
 import type { AxiosResponse } from "axios";
 import axios from "axios";
-import { transformPodcastList } from "./podcast.transform";
+import {
+  transformPodcastDetails,
+  transformPodcastList,
+} from "./podcast.transform";
 
 export async function getPodcastList(): Promise<Podcast[]> {
   try {
@@ -9,6 +12,21 @@ export async function getPodcastList(): Promise<Podcast[]> {
     );
 
     return transformPodcastList(response);
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
+export async function getPodcastDetails(id: string): Promise<PodcastDetails> {
+  try {
+    const response: AxiosResponse<PodcastDetailsResponse> = await axios.get(
+      `https://itunes.apple.com/lookup?id=${id}&media=podcast&entity=podcastEpisode&limit=20`,
+    );
+
+    const podcastList = await getPodcastList();
+
+    return transformPodcastDetails(response, podcastList, id);
   } catch (error) {
     console.error(error);
     throw error;

@@ -15,10 +15,25 @@ type EntryDataType = {
   "im:name": {
     label: string;
   };
+  summary: {
+    label: string;
+  };
 };
 
 type PodcastListResponse = {
   feed: {
     entry: EntryDataType[];
   };
+};
+
+type ResultsDataType = {
+  releaseDate: string;
+  trackId: number;
+  trackName: string;
+  trackTimeMillis: number;
+};
+
+type PodcastDetailsResponse = {
+  resultCount: number;
+  results: ResultsDataType[];
 };
