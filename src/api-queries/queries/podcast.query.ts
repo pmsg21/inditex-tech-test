@@ -1,7 +1,15 @@
 import type { UseQueryResult } from "@tanstack/react-query";
 import { useQuery } from "@tanstack/react-query";
-import { podcastDetailsKey, podcastsKey } from "../keys/podcast.keys";
-import { getPodcastDetails, getPodcastList } from "../api/podcast.api";
+import {
+  podcastDetailsKey,
+  podcastEpisodeDetailsKey,
+  podcastsKey,
+} from "../keys/podcast.keys";
+import {
+  getPodcastDetails,
+  getPodcastEpisodeDetails,
+  getPodcastList,
+} from "../api/podcast.api";
 
 export function useGetPodcastList(): UseQueryResult<Podcast[]> {
   return useQuery({
@@ -17,6 +25,17 @@ export function useGetPodcastDetails(
   return useQuery<PodcastDetails>({
     queryKey: podcastDetailsKey(id),
     queryFn: () => getPodcastDetails(id),
+    staleTime: 86400000, // 24 hours in milliseconds
+  });
+}
+
+export function useGetPodcastEpisodeDetails(
+  podcastId: string,
+  episodeId: string,
+): UseQueryResult<PodcastEpisodeDetails> {
+  return useQuery<PodcastEpisodeDetails>({
+    queryKey: podcastEpisodeDetailsKey(podcastId, episodeId),
+    queryFn: () => getPodcastEpisodeDetails(podcastId, episodeId),
     staleTime: 86400000, // 24 hours in milliseconds
   });
 }

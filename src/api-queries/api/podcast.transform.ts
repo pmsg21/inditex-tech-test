@@ -32,12 +32,24 @@ export const transformPodcastDetails = (
 
   return {
     podcast,
-    episodes: results.map((episode) => ({
-      duration: formatTime(episode.trackTimeMillis),
-      id: episode.trackId,
-      name: episode.trackName,
-      releaseDate: episode.releaseDate,
-    })),
+    episodes: results
+      .map((episode) => ({
+        description: episode.description,
+        duration: formatTime(episode.trackTimeMillis),
+        id: episode.trackId,
+        name: episode.trackName,
+        releaseDate: episode.releaseDate,
+        url: episode.episodeUrl,
+      }))
+      .filter(({ url }) => url),
     numberOfEpisodes: resultCount,
   };
 };
+
+export const transformPodcastEpisodeDetails = (
+  podcastDetails: PodcastDetails,
+  episodeId: string,
+): PodcastEpisodeDetails => ({
+  episode: podcastDetails.episodes.find(({ id }) => id === Number(episodeId)),
+  podcast: podcastDetails.podcast,
+});

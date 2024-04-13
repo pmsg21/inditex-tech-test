@@ -7,14 +7,21 @@ type Podcast = {
 };
 
 type PodcastEpisode = {
+  description: string;
   duration: string;
   id: number;
   name: string;
   releaseDate: string;
+  url: string;
 };
 
 type PodcastDetails = {
   podcast?: Podcast;
   episodes: PodcastEpisode[];
   numberOfEpisodes: number;
+};
+
+type PodcastEpisodeDetails = {
+  podcast?: Podcast;
+  episode?: PodcastEpisode;
 };

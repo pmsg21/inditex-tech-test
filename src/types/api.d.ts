@@ -27,6 +27,8 @@ type PodcastListResponse = {
 };
 
 type ResultsDataType = {
+  description: string;
+  episodeUrl: string;
   releaseDate: string;
   trackId: number;
   trackName: string;
