@@ -1,11 +1,17 @@
 import type { ReactElement } from "react";
 import { Link, useRouteError } from "react-router-dom";
 
+// Define the shape of the error object
 type RouteError = {
   message?: string;
   statusText?: string;
 };
 
+/**
+ * `ErrorPage` component.
+ * Renders an error message and a link to navigate back to the homepage.
+ * @returns The `ErrorPage` component.
+ */
 export function ErrorPage(): ReactElement {
   const error = useRouteError() as RouteError;
   console.error(error);

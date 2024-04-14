@@ -1,30 +1,56 @@
-# React + TypeScript + Vite
+# Inditex Assessment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This project is part of the technical assessment for Inditex. It is a React application built with Vite and TypeScript.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequisites
 
-## Expanding the ESLint configuration
+Before running the project, make sure you have Node.js and npm installed on your machine.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Installation
 
-- Configure the top-level `parserOptions` property like this:
+1. Clone the repository:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+   ```bash
+   git clone https://github.com/pmsg21/inditex-tech-test.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd inditex-assessment
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+## Running the Application
+
+### Development Mode
+
+To run the application in development mode, execute the following command:
+
+```bash
+npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+This command will start the development server and open the application in your default web browser. The application will be served with assets in an unminified state, suitable for development and debugging purposes.
+
+### Production Mode
+
+To build and run the application in production mode, execute the following commands:
+
+```bash
+npm run build
+npm run preview
+```
+
+The `build` script compiles the TypeScript code and optimizes the assets for production, including concatenating and minifying files. The `preview` script serves the built application from the `dist` directory on a local server. Open the provided URL in your web browser to view the application.
+
+## Conclusion
+
+You can now run the Inditex Assessment project in both development and production modes. Happy coding!

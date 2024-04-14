@@ -9,6 +9,7 @@ import {
 } from "../components";
 import { LoaderContextProvider } from "../context/LoaderContext";
 
+// Create the router configuration
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,9 +32,14 @@ const router = createBrowserRouter([
   },
 ]);
 
-// Creates a client
+// Create a new instance of the query client
 const queryClient = new QueryClient();
 
+/**
+ * `BrowserRouter` component.
+ * Provides the router configuration and query client to the application.
+ * @returns The `BrowserRouter` component.
+ */
 export function BrowserRouter(): ReactElement {
   return (
     <LoaderContextProvider>

@@ -11,6 +11,10 @@ import {
   getPodcastList,
 } from "../api/podcast.api";
 
+/**
+ * Custom hook to fetch the list of podcasts.
+ * @returns The query result containing the list of podcasts.
+ */
 export function useGetPodcastList(): UseQueryResult<Podcast[]> {
   return useQuery({
     queryKey: podcastsKey,
@@ -19,6 +23,11 @@ export function useGetPodcastList(): UseQueryResult<Podcast[]> {
   });
 }
 
+/**
+ * Custom hook to fetch the details of a podcast.
+ * @param id - The ID of the podcast.
+ * @returns The query result containing the details of the podcast.
+ */
 export function useGetPodcastDetails(
   id: string,
 ): UseQueryResult<PodcastDetails> {
@@ -29,6 +38,12 @@ export function useGetPodcastDetails(
   });
 }
 
+/**
+ * Custom hook to fetch the details of a podcast episode.
+ * @param podcastId - The ID of the podcast.
+ * @param episodeId - The ID of the episode.
+ * @returns The query result containing the details of the episode.
+ */
 export function useGetPodcastEpisodeDetails(
   podcastId: string,
   episodeId: string,

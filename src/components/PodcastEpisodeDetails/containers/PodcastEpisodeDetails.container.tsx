@@ -5,6 +5,11 @@ import { useGetPodcastEpisodeDetails } from "../../../api-queries/queries/podcas
 import { useLoader } from "../../../hooks/useLoader";
 import { useParams } from "react-router-dom";
 
+/**
+ * `PodcastEpisodeDetailsContainer` component.
+ * Retrieves and renders details of a podcast episode.
+ * @returns The `PodcastEpisodeDetailsContainer` component.
+ */
 export function PodcastEpisodeDetailsContainer(): ReactElement {
   const { podcastId, episodeId } = useParams();
   const { data, isLoading } = useGetPodcastEpisodeDetails(

@@ -1,6 +1,15 @@
 import type { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
 
+/**
+ * `PodcastListItem` component.
+ * Renders a single item in the podcast list.
+ * @param author - Author of the podcast.
+ * @param id - ID of the podcast.
+ * @param image - URL of the podcast image.
+ * @param title - Title of the podcast.
+ * @returns The `PodcastListItem` component.
+ */
 export function PodcastListItem({
   author,
   id,
@@ -9,6 +18,7 @@ export function PodcastListItem({
 }: Podcast): ReactElement {
   const navigate = useNavigate();
 
+  // Click handler to navigate to the podcast details page
   const handleClick = (): void => {
     navigate(`/podcast/${id}`);
   };

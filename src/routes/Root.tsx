@@ -3,6 +3,11 @@ import { Link, Outlet } from "react-router-dom";
 import loader from "../assets/loader.gif";
 import { useLoader } from "../hooks/useLoader";
 
+/**
+ * `Root` component of the application.
+ * Renders the navigation bar, loader (if isLoading is true), and child components.
+ * @returns The `Root` component.
+ */
 export function Root(): ReactElement {
   const { isLoading } = useLoader();
 

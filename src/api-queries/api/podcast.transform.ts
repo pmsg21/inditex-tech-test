@@ -1,6 +1,11 @@
 import type { AxiosResponse } from "axios";
 import { formatTime } from "../../utils/formatTime";
 
+/**
+ * Transforms the response from the podcast list API into an array of `Podcast` objects.
+ * @param response - The Axios response containing the podcast list data.
+ * @returns An array of `Podcast` objects.
+ */
 export const transformPodcastList = (
   response: AxiosResponse<PodcastListResponse>,
 ): Podcast[] => {
@@ -19,6 +24,13 @@ export const transformPodcastList = (
   }));
 };
 
+/**
+ * Transforms the response from the podcast details API into a `PodcastDetails` object.
+ * @param response - The Axios response containing the podcast details data.
+ * @param podcastList - The array of podcasts obtained from the list API.
+ * @param podcastId - The ID of the podcast for which details are fetched.
+ * @returns The `PodcastDetails` object.
+ */
 export const transformPodcastDetails = (
   response: AxiosResponse<PodcastDetailsResponse>,
   podcastList: Podcast[],
@@ -46,6 +58,12 @@ export const transformPodcastDetails = (
   };
 };
 
+/**
+ * Transforms the podcast details into a `PodcastEpisodeDetails` object.
+ * @param podcastDetails - The PodcastDetails object.
+ * @param episodeId - The ID of the episode.
+ * @returns The `PodcastEpisodeDetails` object.
+ */
 export const transformPodcastEpisodeDetails = (
   podcastDetails: PodcastDetails,
   episodeId: string,

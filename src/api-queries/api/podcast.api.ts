@@ -6,6 +6,10 @@ import {
   transformPodcastList,
 } from "./podcast.transform";
 
+/**
+ * Fetches the list of podcasts.
+ * @returns A promise that resolves to an array of podcasts.
+ */
 export async function getPodcastList(): Promise<Podcast[]> {
   try {
     const response: AxiosResponse<PodcastListResponse> = await axios.get(
@@ -19,6 +23,11 @@ export async function getPodcastList(): Promise<Podcast[]> {
   }
 }
 
+/**
+ * Fetches the details of a specific podcast.
+ * @param id - The ID of the podcast.
+ * @returns A promise that resolves to the details of the podcast.
+ */
 export async function getPodcastDetails(id: string): Promise<PodcastDetails> {
   try {
     const response: AxiosResponse<PodcastDetailsResponse> = await axios.get(
@@ -34,6 +43,12 @@ export async function getPodcastDetails(id: string): Promise<PodcastDetails> {
   }
 }
 
+/**
+ * Fetches the details of a specific podcast episode.
+ * @param podcastId - The ID of the podcast.
+ * @param episodeId - The ID of the episode.
+ * @returns A promise that resolves to the details of the podcast episode.
+ */
 export async function getPodcastEpisodeDetails(
   podcastId: string,
   episodeId: string,

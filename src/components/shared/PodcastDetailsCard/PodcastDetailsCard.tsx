@@ -1,10 +1,19 @@
 import type { ReactElement } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+/**
+ * Props for the `PodcastDetailsCard` component.
+ */
 type PodcastDetailsCardProps = {
   podcast?: Podcast;
 };
 
+/**
+ * `PodcastDetailsCard` component.
+ * Renders details of a podcast in a card format.
+ * @param podcast Details of the podcast to render.
+ * @returns The `PodcastDetailsCard` component.
+ */
 export function PodcastDetailsCard({
   podcast,
 }: PodcastDetailsCardProps): ReactElement {

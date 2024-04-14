@@ -1,11 +1,21 @@
 import type { ReactElement } from "react";
 import { PodcastListItem } from "./PodcastListItem";
 
+/**
+ * Props for the `PodcastList` component.
+ */
 type PodcastListProps = {
   podcastList?: Podcast[];
   setFilter(filter: () => string): void;
 };
 
+/**
+ * `PodcastList` component.
+ * Renders a list of podcasts with an input field for filtering.
+ * @param podcastList - List of podcasts to render.
+ * @param setFilter - Function to set the filter value.
+ * @returns The `PodcastList` component.
+ */
 export function PodcastList({
   podcastList,
   setFilter,

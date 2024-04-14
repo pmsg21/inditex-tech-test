@@ -1,3 +1,8 @@
+/**
+ * Formats milliseconds into a string representation of time in the format "HH:MM:SS".
+ * @param milliseconds The number of milliseconds to format.
+ * @returns A string representing the formatted time.
+ */
 export function formatTime(milliseconds: number): string {
   // Convert milliseconds to seconds
   const totalSeconds = Math.floor(milliseconds / 1000);

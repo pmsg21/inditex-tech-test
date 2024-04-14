@@ -3,10 +3,19 @@ import dayjs from "dayjs";
 import { PodcastDetailsCard } from "../../shared";
 import { Link } from "react-router-dom";
 
+/**
+ * Props for the `PodcastDetails` component.
+ */
 type PodcastDetailsProps = {
   podcastDetails?: PodcastDetails;
 };
 
+/**
+ * `PodcastDetails` component.
+ * Renders details of a podcast including its episodes.
+ * @param podcastDetails Details of the podcast to render.
+ * @returns The `PodcastDetails` component.
+ */
 export function PodcastDetails({
   podcastDetails,
 }: PodcastDetailsProps): ReactElement {

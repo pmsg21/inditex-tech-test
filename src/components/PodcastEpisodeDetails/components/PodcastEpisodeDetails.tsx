@@ -1,6 +1,12 @@
 import type { ReactElement } from "react";
 import { PodcastDetailsCard } from "../../shared";
 
+/**
+ * `PodcastEpisodeDetails` component.
+ * Renders details of a podcast episode, including name, description, and audio player.
+ * @param {PodcastEpisodeDetailsProps} props - The props for the `PodcastEpisodeDetails` component.
+ * @returns The `PodcastEpisodeDetails` component.
+ */
 export function PodcastEpisodeDetails({
   episode,
   podcast,
