@@ -1,12 +1,13 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import type { ReactElement } from "react";
+import { ErrorPage, Root } from ".";
 import {
   PodcastDetailsContainer,
   PodcastEpisodeDetailsContainer,
   PodcastListContainer,
 } from "../components";
-import { ErrorPage, Root } from ".";
-import type { ReactElement } from "react";
+import { LoaderContextProvider } from "../context/LoaderContext";
 
 const router = createBrowserRouter([
   {
@@ -35,8 +36,10 @@ const queryClient = new QueryClient();
 
 export function BrowserRouter(): ReactElement {
   return (
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <LoaderContextProvider>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </LoaderContextProvider>
   );
 }

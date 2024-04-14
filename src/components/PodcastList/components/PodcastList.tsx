@@ -14,7 +14,7 @@ export function PodcastList({
     <div className="container mx-auto px-10">
       <div className="flex flex-row items-center justify-end gap-3">
         <span className="flex h-1/2 items-center rounded-lg bg-[#2c79be] px-2 py-0 text-2xl font-bold text-white">
-          100
+          {podcastList?.length}
         </span>
         <input
           className="rounded border-2 border-gray-100 p-2 transition-colors focus:border-gray-300 focus:outline-none"
@@ -23,11 +23,17 @@ export function PodcastList({
           type="text"
         />
       </div>
-      <div className="mt-24 grid grid-cols-4 justify-between gap-8">
-        {podcastList?.map((podcast) => (
-          <PodcastListItem key={`podcast-${podcast.id}`} {...podcast} />
-        ))}
-      </div>
+      {podcastList?.length ? (
+        <div className="mt-24 grid grid-cols-4 justify-between gap-8">
+          {podcastList?.map((podcast) => (
+            <PodcastListItem key={`podcast-${podcast.id}`} {...podcast} />
+          ))}
+        </div>
+      ) : (
+        <h1 className="mt-20 text-center text-4xl italic text-gray-500">
+          No podcast found
+        </h1>
+      )}
     </div>
   );
 }
