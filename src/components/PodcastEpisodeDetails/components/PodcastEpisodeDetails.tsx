@@ -16,9 +16,12 @@ export function PodcastEpisodeDetails({
       <PodcastDetailsCard podcast={podcast} />
       <div className="ml-32 h-full w-full rounded p-4 shadow-custom transition-shadow hover:shadow-custom-hover">
         <h1 className="mb-4 text-4xl font-bold">{episode?.name}</h1>
-        <p className="mb-4 border-b-2 border-b-gray-100 pb-4 italic">
-          {episode?.description}
-        </p>
+        {episode?.description && (
+          <p
+            className="mb-4 border-b-2 border-b-gray-100 pb-4 italic"
+            dangerouslySetInnerHTML={{ __html: episode.description }}
+          />
+        )}
         <audio
           controls
           src={episode?.url}
